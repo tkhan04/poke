@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokedexApp.SimulatorPage"
+             Title="Battle Simulation"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout>
+        <Label Text="It will be a battle for the ages.... When its ready" FontSize="50" HorizontalOptions="Center" VerticalOptions="Center" Padding="50"/>
+        <Label
+            Style="{StaticResource SubHeadline}"
+            Text="Sorry! This project is currently still under construction until further notice."
+            HorizontalOptions="Center"
+            FontSize="30"
+            FontFamily="PokedexApp/Resources/Fonts/HvDTrial_Brandon_Grotesque_black-BF64a625c944b08.otf"
+            SemanticProperties.HeadingLevel="Level1"
+            SemanticProperties.Description="Author statement"
+            HeightRequest="300"
+            Padding="100"
+            LineBreakMode="WordWrap"
+            Margin="15" />
+        <Image
+            Source="construct.jpg"
+            x:Name="construct"
+            VerticalOptions="EndAndExpand"        
+        />
+    </VerticalStackLayout>
+</ContentPage>

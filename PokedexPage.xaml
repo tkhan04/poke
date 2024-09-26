@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokedexApp.PokedexPage">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#333333" Offset="0.1"/>
+            <GradientStop Color="#000000" Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid RowDefinitions="Auto,*">
+        <!-- Search Box -->
+        <Frame Grid.Row="0"
+               Margin="20,40,20,20"
+               Padding="5"
+               CornerRadius="30"
+               BorderColor="Gray"
+               HasShadow="True">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="search_icon.png"
+                       HeightRequest="20"
+                       WidthRequest="20"
+                       Margin="10,0,0,0"
+                       VerticalOptions="Center" />
+                <Entry Grid.Column="1"
+                       x:Name="searchEntry"
+                       Placeholder="Search Pokémon"
+                       PlaceholderColor="Gray"
+                       TextChanged="OnSearchTextChanged"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       Margin="10,0,10,0" />
+            </Grid>
+        </Frame>
+
+        <CollectionView Grid.Row="1" 
+                        x:Name="pokemonList"
+                        Margin="20,0,20,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding PokeDexNum}" Grid.Column="0"/>
+                        <Label Text="{Binding Name}" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
